@@ -96,6 +96,7 @@ PRODUCT_PACKAGES += \
     DeviceConfigOverlay \
     CertifiedPropsOverlay \
     FrameworksOverlay \
+    PermissionControllerOverlay \
     SettingsOverlay \
     SettingsProviderOverlay \
     SystemUIOverlay
