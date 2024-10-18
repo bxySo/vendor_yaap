@@ -40,6 +40,7 @@ SOONG_CONFIG_lineageGlobalVars += \
 
 SOONG_CONFIG_NAMESPACES += lineageQcomVars
 SOONG_CONFIG_lineageQcomVars += \
+    no_fm_firmware \
     no_camera_smooth_apis \
     uses_qti_camera_device \
     should_wait_for_qsee \
@@ -92,11 +93,27 @@ SOONG_CONFIG_lineageQcomVars_qti_vibrator_use_effect_stream := $(TARGET_QTI_VIBR
 SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_path := $(TARGET_TRUST_USB_CONTROL_PATH)
 SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_enable := $(TARGET_TRUST_USB_CONTROL_ENABLE)
 SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_disable := $(TARGET_TRUST_USB_CONTROL_DISABLE)
+SOONG_CONFIG_lineageQcomVars_no_fm_firmware := $(TARGET_QCOM_NO_FM_FIRMWARE)
 ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
 SOONG_CONFIG_lineageQcomVars_qcom_display_headers_namespace := vendor/qcom/opensource/commonsys-intf/display
 else
 SOONG_CONFIG_lineageQcomVars_qcom_display_headers_namespace := $(QCOM_SOONG_NAMESPACE)/display
 endif
 SOONG_CONFIG_lineageQcomVars_qti_vibrator_effect_lib := $(TARGET_QTI_VIBRATOR_EFFECT_LIB)
+
+# libfmjni
+ifeq ($(BOARD_HAVE_QCOM_FM),true)
+    PRODUCT_SOONG_NAMESPACES += \
+        vendor/qcom/opensource/libfmjni
+else ifeq ($(BOARD_HAVE_BCM_FM),true)
+    PRODUCT_SOONG_NAMESPACES += \
+        hardware/broadcom/fm
+else ifeq ($(BOARD_HAVE_SLSI_FM),true)
+    PRODUCT_SOONG_NAMESPACES += \
+        hardware/samsung_slsi/fm
+else ifneq ($(BOARD_HAVE_MTK_FM),true)
+    PRODUCT_SOONG_NAMESPACES += \
+        packages/apps/FMRadio/jni/fmr
+endif
 
 $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
