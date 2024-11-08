@@ -41,6 +41,7 @@ PRODUCT_PACKAGES += \
     TrichromeLibrary \
     TrichromeWebView \
     TrichromeChrome \
+    Twelve \
     YASR \
     Seedvault \
     OmniJaws \
