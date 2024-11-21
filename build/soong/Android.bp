@@ -212,6 +212,25 @@ trust_usb_control {
 }
 
 soong_config_module_type {
+    name: "charge_rate_multiplier",
+    module_type: "cc_defaults",
+    config_namespace: "lineageGlobalVars",
+    value_variables: [
+        "target_charge_rate_multiplier",
+    ],
+    properties: ["cppflags"],
+}
+
+charge_rate_multiplier {
+    name: "charge_rate_multiplier_defaults",
+    soong_config_variables: {
+        target_charge_rate_multiplier: {
+            cppflags: ["-DCHARGE_RATE_MULTIPLIER=%s"],
+        },
+    },
+}
+
+soong_config_module_type {
     name: "surfaceflinger_qcom_extensions",
     module_type: "cc_defaults",
     config_namespace: "lineageQcomVars",

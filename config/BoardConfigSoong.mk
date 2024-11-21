@@ -36,7 +36,8 @@ SOONG_CONFIG_lineageGlobalVars += \
     target_camera_package_name \
     target_trust_usb_control_path \
     target_trust_usb_control_enable \
-    target_trust_usb_control_disable
+    target_trust_usb_control_disable \
+    target_charge_rate_multiplier
 
 SOONG_CONFIG_NAMESPACES += lineageQcomVars
 SOONG_CONFIG_lineageQcomVars += \
@@ -72,6 +73,7 @@ TARGET_GRALLOC_HANDLE_HAS_UBWCP_FORMAT ?= false
 TARGET_TRUST_USB_CONTROL_PATH ?= /proc/sys/kernel/deny_new_usb
 TARGET_TRUST_USB_CONTROL_ENABLE ?= 1
 TARGET_TRUST_USB_CONTROL_DISABLE ?= 0
+TARGET_CHARGE_RATE_MULTIPLIER ?= 1
 
 # Soong value variables
 SOONG_CONFIG_lineageGlobalVars_camera_skip_kind_check := $(CAMERA_SKIP_KIND_CHECK)
@@ -93,6 +95,7 @@ SOONG_CONFIG_lineageQcomVars_qti_vibrator_use_effect_stream := $(TARGET_QTI_VIBR
 SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_path := $(TARGET_TRUST_USB_CONTROL_PATH)
 SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_enable := $(TARGET_TRUST_USB_CONTROL_ENABLE)
 SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_disable := $(TARGET_TRUST_USB_CONTROL_DISABLE)
+SOONG_CONFIG_lineageGlobalVars_target_charge_rate_multiplier := $(TARGET_CHARGE_RATE_MULTIPLIER)
 SOONG_CONFIG_lineageQcomVars_no_fm_firmware := $(TARGET_QCOM_NO_FM_FIRMWARE)
 ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
 SOONG_CONFIG_lineageQcomVars_qcom_display_headers_namespace := vendor/qcom/opensource/commonsys-intf/display
