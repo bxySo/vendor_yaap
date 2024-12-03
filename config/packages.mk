@@ -48,8 +48,7 @@ PRODUCT_PACKAGES += \
     OpenDelta \
     Ripple \
     Panic \
-    LMOFreeform \
-    LMOFreeformSidebar
+    LMOFreeform
 
 # TextClassifier
 PRODUCT_PACKAGES += \
