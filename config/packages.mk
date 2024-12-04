@@ -35,6 +35,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Aperture \
     AvatarPicker \
+    Camelot \
     ExactCalculator \
     Glimpse \
     MatLog \
