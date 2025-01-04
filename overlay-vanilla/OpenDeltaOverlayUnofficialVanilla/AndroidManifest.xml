@@ -14,12 +14,12 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eu.chainfire.opendelta.overlay.vanilla">
+    package="eu.chainfire.opendelta.overlay.unofficial.vanilla">
 
     <application android:hasCode="false"/>
 
     <overlay
         android:isStatic="true"
-        android:priority="800"
+        android:priority="900"
         android:targetPackage="eu.chainfire.opendelta" />
 </manifest>

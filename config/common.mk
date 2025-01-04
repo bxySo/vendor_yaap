@@ -94,6 +94,7 @@ PRODUCT_PACKAGES += \
     DeviceConfigOverlay \
     CertifiedPropsOverlay \
     FrameworksOverlay \
+    OpenDeltaOverlayUnofficial \
     PermissionControllerOverlay \
     SettingsOverlay \
     SettingsProviderOverlay \
@@ -103,7 +104,7 @@ PRODUCT_PACKAGES += \
     DialerOverlayVanilla \
     FrameworksOverlayVanilla \
     LatinIMEOverlayVanilla \
-    OpenDeltaOverlayVanilla \
+    OpenDeltaOverlayUnofficialVanilla \
     SettingsProviderOverlayVanilla \
     ThemePickerOverlayVanilla
 # Include LatinIME dictionaries
